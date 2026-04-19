@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9E6F2">
+
+    <!-- HEADER -->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingTop="40dp"
+        android:paddingBottom="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:text="Student Task Manager"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_menu_sort_by_size" />
+    </RelativeLayout>
+
+    <!-- MAIN CONTENT (3 SECTIONS EVENLY SPACED) -->
+    <LinearLayout
+        android:id="@+id/mainContainer"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- TASK -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:elevation="6dp"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="Task Management"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <Button
+                    android:id="@+id/btnTaskStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#C7D6E5"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Task Status Manager"
+                    android:textColor="#050505" />
+
+                <Button
+                    android:id="@+id/btnCategory"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#C7D6E5"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Task Category"
+                    android:textColor="#0B0B0B" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="0dp">
+
+                <Button
+                    android:id="@+id/btnPriority"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#C7D6E5"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Priority Level"
+                    android:textColor="#0B0B0B"
+                    android:textColorHighlight="#050505" />
+
+                <Button
+                    android:id="@+id/btnDeadline"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#C7D6E5"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Deadline Alerts"
+                    android:textColor="#070707" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- STUDY -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:elevation="6dp"
+            android:padding="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="Study"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnTimer"
+                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Icon.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#8E8EFF"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Study Timer"
+                    android:textColor="#0D0D0D" />
+
+                <Button
+                    android:id="@+id/btnPlanner"
+                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Surface"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#8E8EFF"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Study Planner"
+                    android:textColor="#050505" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- PROGRESS -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:elevation="6dp"
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:text="Progress"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnReport"
+                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Surface"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#C7D6E5"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Productivity Report"
+                    android:textColor="#050505" />
+
+                <Button
+                    android:id="@+id/btnStreak"
+                    style="@style/Widget.Material3.ExtendedFloatingActionButton.Surface"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="#8E8EFF"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Streak System"
+                    android:textColor="#090909" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
